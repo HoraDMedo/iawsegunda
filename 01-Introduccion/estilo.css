@@ -1,0 +1,45 @@
+* {
+margin: 0%;
+padding: 0%;  
+  
+}
+
+h1{
+    color: red;
+    margin-bottom: 2%;
+    background-color: chocolate;
+}
+
+.tit{
+text-align: center;
+}
+
+.noticia{
+    
+float: left;
+margin-left: 25%;
+border: 1px solid black;
+text-align: center;
+width: 50%;
+
+}
+.noticia>img{
+    border:  3px solid black;
+     width: 40%;
+     float: left;
+     }
+.noticia>p{
+    margin-top: 40px;
+    width: 40%;
+    float: left;
+    }
+
+
+footer{
+margin-top: 2%;
+width: 100%;
+background-color: crimson;
+bottom: 0%;
+float: left;
+text-align: center;
+}
