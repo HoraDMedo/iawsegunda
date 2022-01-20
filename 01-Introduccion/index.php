@@ -15,10 +15,13 @@ $miprimeravariable=5;
 <body>
 
     <div class="cabecera">
-    <h1 class="tit">Esto es una cabecera</h1>
-        <?php
+    <h1 class="tit">Esto es una cabecera
+    <?php
             print $miprimeravariable;
         ?>
+
+    </h1>
+        
 
         
     </div>

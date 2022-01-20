@@ -2,13 +2,14 @@
 
 $bienvenido=true;
 $nombre="";
-
+$edad="";
 
 
 if(isset($_POST["enviar"])){
     $bienvenido=false;
     $nombre=$_POST["nombre"];
     $segundonombre=$_POST["apellidos"];
+    $edad=$_POST["edad"];
 }
 
 
@@ -49,6 +50,7 @@ if(isset($_POST["enviar"])){
     <?php if ($bienvenido) { ?>
 
         <h1>Bienvenido!!!</h1>
+        
 
     <?php } ?>
 
@@ -56,6 +58,7 @@ if(isset($_POST["enviar"])){
     <div>
 
         <form action="index.php" method="POST">
+
 
             <fieldset>
                 <legend>Información Personal</legend>
@@ -67,9 +70,46 @@ if(isset($_POST["enviar"])){
 
             <fieldset>
                 <legend>Edad</legend>
-                <label><input type="radio" tabindex="20" value="20-39" name="edad" /> 20-39</label>
-                <label><input type="radio" tabindex="21" value="40-59" name="edad" /> 40-59</label>
-                <label><input type="radio" tabindex="22" value="60-79" name="edad" /> 60-79</label>
+
+        
+
+                <label><input type="radio" tabindex="20"  
+
+                <?php if ($edad == "20-39"){ ?>
+                
+                        checked
+
+                 <?php }?>
+
+                 value="20-39" name="edad"/>20-39</label>
+
+
+
+
+                <label><input type="radio" tabindex="21"
+                
+                <?php if ($edad == "40-59"){ ?>
+                
+                     checked
+
+                <?php }?>
+
+                value="40-59" name="edad" /> 40-59</label>
+
+
+
+
+                <label><input type="radio" tabindex="22"
+            
+                <?php if ($edad == "60-79"){ ?> 
+                    checked
+                <?php }?>
+                
+                value="60-79" name="edad" /> 60-79</label>
+
+
+
+
             </fieldset>
 <br>
 
