@@ -10,6 +10,21 @@ if(isset($_POST["enviar"])){
     $nombre=$_POST["nombre"];
     $segundonombre=$_POST["apellidos"];
     $edad=$_POST["edad"];
+    $imagen="<img src='https://i.redd.it/x6xjybiem9r61.jpg' alt='No se carga tonto' style='width:25%; margin-left:40%;'>";
+
+   
+ 
+}
+
+
+if (isset($_POST["edad"])){
+
+    $edad_20_39=($_POST["edad"]="20-39")?"checked":"";
+    $edad_40_59=($_POST["edad"]="40-59")?"checked":"";
+    $edad_60_79=($_POST["edad"]="60-79")?"checked":"";
+
+
+
 }
 
 
@@ -63,9 +78,9 @@ if(isset($_POST["enviar"])){
             <fieldset>
                 <legend>Información Personal</legend>
                 <label for="nombre">Nombre:</label>
-                <input name="nombre" id="nombre" type="text" tabindex="1" value="<?php echo $nombre ;?>"/>
+                <input name="nombre" id="nombre" type="text" tabindex="1" value="<?=$nombre?>"/>
                 <label for="apellidos">Apellidos:</label>
-                <input name="apellidos" id="apellidos" type="text" tabindex="2" value="<?php echo $segundonombre ;?>"/>
+                <input name="apellidos" id="apellidos" type="text" tabindex="2"  value="<?=$segundonombre?>"/>
             </fieldset>
 
             <fieldset>
@@ -73,49 +88,35 @@ if(isset($_POST["enviar"])){
 
         
 
-                <label><input type="radio" tabindex="20"  
-
-                <?php if ($edad == "20-39"){ ?>
-                
-                        checked
-
-                 <?php }?>
-
-                 value="20-39" name="edad"/>20-39</label>
+                <label><input type="radio" tabindex="20" <?=$edad_20_39?> value="20-39" name="edad"/>20-39</label>
 
 
 
 
-                <label><input type="radio" tabindex="21"
-                
-                <?php if ($edad == "40-59"){ ?>
-                
-                     checked
-
-                <?php }?>
-
-                value="40-59" name="edad" /> 40-59</label>
+                <label><input type="radio" tabindex="21" <?=$edad_40_59?> value="40-59" name="edad" /> 40-59</label>
 
 
 
 
-                <label><input type="radio" tabindex="22"
-            
-                <?php if ($edad == "60-79"){ ?> 
-                    checked
-                <?php }?>
-                
-                value="60-79" name="edad" /> 60-79</label>
+                <label><input type="radio" tabindex="22" <?=$edad_60_79?> value="60-79" name="edad" /> 60-79</label>
 
 
 
 
             </fieldset>
-<br>
+            <br>
 
             <input type="submit" name="enviar" value="enviar">
 
+
         </form>
+
+   
+
+        <?=$imagen?>
+           
+    
+
     </div>
 </body>
 </html>
