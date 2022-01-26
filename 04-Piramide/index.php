@@ -33,7 +33,7 @@ if(isset($_POST["enviar"])){
 
     <?php } else { ?>
 
-        <h1 style="margin-left:20%;"> Esta es tu piramide del color y lingitud indicada </h1>
+        <h1 style="margin-left:20%;"> Esta es tu piramide del color y longitud indicada </h1>
 
     <?php } ?>
 
@@ -45,10 +45,13 @@ if(isset($_POST["enviar"])){
 
 
             <input type="number" name="numeros" value="<?=$numeros?>">
-
+            <br>
+            <br>
             <input type="color" name="color" value="<?=$colorcito?>">
-
+            <br>
+            <br>
             <input type="submit" name="enviar" value="accion">
+            <br>
         </form>
 
 

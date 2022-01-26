@@ -62,14 +62,16 @@ if(isset($_POST["enviar"])){
                 $color2=rand(0, 255);
                 $color3=rand(0, 255);
 
-                $aste="<span style='color:rgb($color1, $color2, $color3)';> * </span>";
+                $aste="<span style='color:rgb($color1, $color2, $color3)';>*</span>";
 
 
                 for ($i = 1; $i <= $_POST["numeros"]; $i++) {
                     $color1=rand(0, 255);
                     $color2=rand(0, 255);
                     $color3=rand(0, 255);
-                    
+
+            
+                   
                     $aste2="<span style='color:rgb($color1, $color2, $color3)';>*</span>";
 
                     echo "$aste";
@@ -85,8 +87,6 @@ if(isset($_POST["enviar"])){
 
 
     </div>
-
-
 
       <div style="background-color:lightblue; margin-top:2%;" class="perro">
 
