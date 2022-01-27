@@ -3,10 +3,10 @@
 $bienvenido=true;
 
 
-if(isset($_POST["enviar"])){
+if(isset($_GET["enviar"])){
     $bienvenido=false;
-    
-    $image2="<img src='https://i.redd.it/x6xjybiem9r61.jpg' alt='' style='width:25%; margin-left:40%'>";
+    header("Refresh:0; url=index.php?numeros=30&enviar=Accion+cerdo");
+
 }
 
 
@@ -21,30 +21,30 @@ if(isset($_POST["enviar"])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario</title>
 </head>
-<body>
+<body align="center">
 
 
     <?php if ($bienvenido) { ?>
 
-        <h1 style="margin-left:20%;">Introduce un numero y luego accion ,para que pasen cositas</h1>
+        <h1>Introduce un numero y luego accion ,para que pasen cositas</h1>
         
 
     <?php } else { ?>
 
-        <h1 style="margin-left:20%;"> Esta es tu piramide de cositas </h1>
+        <h1> Esta es tu piramide de cositas </h1>
 
     <?php } ?>
 
 
 
-    <div style="margin-top:2%; margin-left:20%;">
+    <div style="margin-top:2%;">
 
-        <form action="index.php" method="POST">
+        <form action="index.php" method="get">
 
 
-            <input type="number" name="numeros" value="enviar">
+            <input type="number" name="numeros" value="<?=$_GET["numeros"]?>">
 
-            <input type="submit" name="enviar" value="accion">
+            <input type="submit" name="enviar" value="Accion cerdo">
         </form>
 
 
@@ -52,7 +52,7 @@ if(isset($_POST["enviar"])){
     </div>
 
 
-    <div style="margin-top:2%; margin-left:20%;">
+    <div style="margin-top:2%;">
 
             <?php 
             
@@ -62,17 +62,17 @@ if(isset($_POST["enviar"])){
                 $color2=rand(0, 255);
                 $color3=rand(0, 255);
 
-                $aste="<span style='color:rgb($color1, $color2, $color3)';>*</span>";
+                $aste="<span style='color:rgb($color1, $color2, $color3);'>*</span>";
 
 
-                for ($i = 1; $i <= $_POST["numeros"]; $i++) {
+                for ($i = 1; $i <= $_GET["numeros"]; $i++) {
                     $color1=rand(0, 255);
                     $color2=rand(0, 255);
                     $color3=rand(0, 255);
 
             
                    
-                    $aste2="<span style='color:rgb($color1, $color2, $color3)';>*</span>";
+                    $aste2="<span style='color:rgb($color1, $color2, $color3);'>*</span>";
 
                     echo "$aste";
                     echo "<br>";
@@ -94,8 +94,8 @@ if(isset($_POST["enviar"])){
 
          
      
-        <?=$image=($bienvenido == false)? "<img src='https://i.redd.it/x6xjybiem9r61.jpg' alt='' style='width:25%; margin-left:15%; padding:1%; floa'>" : "";?>
-        <?=$image=($bienvenido == false)? "<img src='https://pbs.twimg.com/ext_tw_video_thumb/1446152175135059970/pu/img/5AYIeAcyZ9zcF5aa.jpg' alt='' style='width:25%; margin-left:15%; padding:1%; floa'>" : "";?>
+        <?=$image=($bienvenido == false)? "<img src='https://i.redd.it/x6xjybiem9r61.jpg' alt='' style='width:25%; padding:1%;'>" : "";?>
+        <?=$image=($bienvenido == false)? "<img src='https://pbs.twimg.com/ext_tw_video_thumb/1446152175135059970/pu/img/5AYIeAcyZ9zcF5aa.jpg' alt='' style='width:25%; margin-left:10%; padding:1%;'>" : "";?>
      
 
      </div>
