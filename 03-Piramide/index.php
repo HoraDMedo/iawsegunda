@@ -6,6 +6,8 @@ $bienvenido=true;
 if(isset($_GET["enviar"])){
     $bienvenido=false;
     $numero=$_GET["numeros"];
+
+
     header("Refresh:0.5; url=index.php?numeros=$numero&enviar=Accion+cerdo");
 
 }
