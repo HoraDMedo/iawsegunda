@@ -6,7 +6,7 @@ $vuelo="";
 $apellido="";
 $fecha_e="";
 $vuelo_e="";
-
+$correo_e="";
 
 
 $nombre_e=false;
@@ -21,18 +21,19 @@ if(isset($_POST["enviar"])){
     $fecha_o=$_POST["fecha_salida"];
     $fecha_d=$_POST["fecha_destino"];
     $vuelo=$_POST["transporte"];
+    $correo=$_POST["Correo"];
+    $posicion = strpos($correo, "@");
 
-  echo $vuelo;
-    
+    echo $posicion;
 
 
-    if(strlen($nombre) < 3 || $nombre == ""){
+    if(strlen($nombre) < 3 || $nombre == "" ){
 
         $nombre_e=true;
 
     }
 
-    if(strlen($apellido) < 3 || $apellido == ""){
+    if(strlen($apellido) < 3 || $apellido == "") {
 
         $apellido_e=true;
 
@@ -41,17 +42,18 @@ if(isset($_POST["enviar"])){
     if($fecha_o > $fecha_d || $fecha_d == "" || $fecha_o == ""){
 
         $fecha_e=true;
-
     }
 
     if($vuelo == "..."){
 
         $vuelo_e=true;
-
     }
 
-}
+    if (empty($posicion)) {
 
+      $correo_e=true;
+    }  
+}
 
 
 ?>
@@ -73,7 +75,7 @@ if(isset($_POST["enviar"])){
 <form action="fomulario_resgistro" method="post">
 <div class="registro">
 
-<h2>Formulario Reserva Vuelos <?php if($vuelo_e || $fecha_e || $apellido_e || $nombre_e) echo "<h2 class='errorh2'> Rellena o Modifica los campos Necesarios, por favor</h2>"?></h2>
+<h2>Formulario Reserva Vuelos <?php if($vuelo_e || $fecha_e || $apellido_e || $nombre_e || $correo_e) echo "<h2 class='errorh2'> Rellena o Modifica los campos Necesarios, por favor</h2>"?></h2>
 
 </input type="text" name="nombrecito" class="nombre">
 
@@ -87,6 +89,11 @@ if(isset($_POST["enviar"])){
     <div>
     <h4>Apellidos<h4>
     <input type="text" name="apellidos" placeholder="Perez Lopez" <?=$clase2=($apellido_e)?'class="user_namee"':'class="user_name"'?> value="<?=$apellido?>"></input>
+    </div>
+
+    <div>
+    <h4>Correo<h4>
+    <input type="text" name="Correo" placeholder="pepito@gmail.com" <?=$clase6=($correo_e)?'class="user_namee"':'class="user_name"'?> value="<?=$correo?>"></input>
     </div>
 
     <div>
