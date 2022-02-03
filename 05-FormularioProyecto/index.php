@@ -23,11 +23,11 @@ if(isset($_POST["enviar"])){
     $vuelo=$_POST["transporte"];
     $correo=$_POST["Correo"];
     $posicion = strpos($correo, "@");
+ 
+  
 
-    echo $posicion;
 
-
-    if(strlen($nombre) < 3 || $nombre == "" ){
+    if(strlen($nombre) < 3 || $nombre == "" ) {
 
         $nombre_e=true;
 
@@ -49,7 +49,7 @@ if(isset($_POST["enviar"])){
         $vuelo_e=true;
     }
 
-    if (empty($posicion)) {
+    if (strlen($correo < 3 ) ||empty($posicion)) {
 
       $correo_e=true;
     }  
