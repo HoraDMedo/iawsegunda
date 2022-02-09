@@ -7,14 +7,17 @@ window.addEventListener("load",function(){
         // asociar un elemento html en JS
 
         PulsaBTN = document.getElementById("PulsaBTN")
-        numClicks = document.getElementById("numClicks")
+        
+  
         //Aosciar la ejecucion de una funcion al evento cli
 
         PulsaBTN.addEventListener("click",function(){
         numClicks = numClicks + 1
-        alert("Me has pulsado")
-        alert(numClicks) 
 
+        if (numClicks == 1)
+                alert("Me has pulsado")
+        else
+                alert("has pulasdo " + numClicks + " Veces") 
         })
 
 
