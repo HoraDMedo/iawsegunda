@@ -24,9 +24,9 @@ window.addEventListener("load",function(){
                 anterior = siguiente
                 siguiente = final
 
-        //     let span = document.createElement("span")
-        //    span.innerHTML = final + " "
-        //    salida.appendChild(span)
+        let span = document.createElement("span")
+        span.innerHTML = final + " "
+        salida.appendChild(span)
 
        // final = siguiente + anterior
        // anterior = siguiente
@@ -35,14 +35,9 @@ window.addEventListener("load",function(){
 
         salida2.innerHTML = final
 
-
-
              //  let final = anterior + siguiente           
 
         })
-
-
-
 
 })
 

@@ -14,12 +14,18 @@ window.addEventListener("load",function(){
 
         addBTN.addEventListener("click",function(){
 
-        let li = document.createElement("li")
-        li.innerHTML =  texto.value + " x " + numero.value + " Unidades"
-        if (texto.value != "" && numero.value != "")
-        salida2.appendChild(li)
-
-        
+       
+        if (texto.value != "" && numero.value != ""){
+              
+                for (let i=0; i < numero.value; i++){
+                        let li = document.createElement("li")
+                        li.innerHTML =  texto.value
+                        salida2.appendChild(li)
+                     
+                }
+                
+                document.getElementById("formulario").reset()
+        }
 
        // final = siguiente + anterior
        // anterior = siguiente
