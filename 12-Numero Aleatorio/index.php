@@ -1,29 +1,53 @@
 <?php
 
-$aleatorio=3;
+session_start();
+
 
 $final="";
-if (isset($_POST["enviar"])){
 
-        if ($_POST["num"] == $aleatorio){
+
+if (isset($_SESSION["numerito"])){
+
+        if ($_POST["num"] == $_SESSION["numerito"]){
             $final="<h3>Correcto Has adivinado el numero</h3>";
+            $img="<img src='https://acegif.com/wp-content/gif/confetti-12.gif' alt='Girl in a jacket' width='500' height='600'>";
         }
 
-        if ($_POST["num"] < $aleatorio){
+        if ($_POST["num"] < $_SESSION["numerito"]){
             $final="<h3>Un poquito mas</h3>";
+            $_SESSION["cont"] = $_SESSION["cont"] + 1;
         }
 
-        if ($_POST["num"] > $aleatorio){
+        if ($_POST["num"] > $_SESSION["numerito"]){
             $final="<h3>Un poquito menos</h3>";
-        
+            $_SESSION["cont"] = $_SESSION["cont"] + 1;
+          
         }
-else{
-    
-
-
 }
 
-}
+        if (!$_SESSION["numerito"]){
+
+            $_SESSION["numerito"] = rand(0,10);
+            
+            $_SESSION["cont"] = 0;
+        }
+
+       if ($_POST["reiniciar"]){
+
+        $_SESSION["cont"] = 0;
+        $_SESSION["numerito"]=rand(0,10);
+
+       }
+       
+        print_r($_SESSION["numerito"]);
+        echo "<br>";
+        print_r($cont);
+
+
+
+
+
+
 ?>
 
 
@@ -42,7 +66,12 @@ else{
 <form action="index.php" method="post" style="margin-left:10%;">
     <input type="number" name="num" max="10" min="0">
     <input type="submit" name="enviar">
-<?=$final?>
+    <br><br>
+    <label>Contandor de intentos</label>
+    <input type="submit" name="reiniciar" value="reiniciar contador y num">
+    <input type="text" size="2" value="<?=$_SESSION["cont"]?>">
+    <?=$final?>
+    <?=$img?>
 
 </form>
 
