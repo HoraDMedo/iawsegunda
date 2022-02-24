@@ -28,7 +28,6 @@ if (isset($_SESSION["numerito"])){
         if (!$_SESSION["numerito"]){
 
             $_SESSION["numerito"] = rand(0,10);
-            
             $_SESSION["cont"] = 0;
         }
 
@@ -41,8 +40,7 @@ if (isset($_SESSION["numerito"])){
        
         print_r($_SESSION["numerito"]);
         echo "<br>";
-        print_r($cont);
-
+     
 
 
 
