@@ -25,9 +25,15 @@ window.addEventListener("load",function(){
 
         let h1 = document.createElement("td")
         h1.innerHTML = inputValue3
+        
         salida.innerHTML = inputValue3
    
    //  let final = anterior + siguiente           
+
+
+
+
+
 
 
    buttonres.addEventListener("click",function(){
