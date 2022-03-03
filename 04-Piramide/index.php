@@ -65,9 +65,6 @@ if(isset($_POST["enviar"])){
             <?php 
             
 
-
-
-
             if ($bienvenido == false){
 
         

@@ -6,7 +6,9 @@ window.addEventListener("load",function(){
     cero = document.getElementById("cero")
   
     reset = document.getElementById("reset")
-
+    salida = document.getElementById("salida")
+   
+  
 
     //Aosciar la ejecucion de una funcion al evento cli
 
@@ -18,21 +20,43 @@ window.addEventListener("load",function(){
         let span = document.createElement("span")
         span.innerHTML = valor
         salida.appendChild(span)
+
+        valor2= valor2 + valor
    
     })
 
     cero.addEventListener("click",function(){
-
-
+       
         valor = cero.value
-           
-          let span = document.createElement("span")
-          span.innerHTML = valor
-          salida.appendChild(span)
+        let span = document.createElement("span")
+        span.innerHTML = valor
+        salida.appendChild(span)
+
+       valor2="valor2+span.value"
+         
      
     })
 
- toString([radix])
+    cero.addEventListener("click",function(){
+        document.write(valor);
+        let valor = cero.value
+        let valor2 = valor2 + valor
+       
+         
+     
+    })
+
+    reset.addEventListener("click",function(){
+        
+      
+        numeros=Number(salida.innerText)
+        numero2=parseInt(numeros, 2)
+        alert(numero2)
+
+            
+    })       
+
+
 
 
 })

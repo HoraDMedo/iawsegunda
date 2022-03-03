@@ -95,6 +95,7 @@ if(isset($_POST["enviar"])){
     <?php } ?>
 
 <?php if ($error){ ?>
+    
     <div class="error"> 
         <h1>Los datos introducidos tienen un error</h1>
     </div>
