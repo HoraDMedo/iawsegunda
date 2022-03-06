@@ -1,12 +1,3 @@
-<?php
-
-include('acceso_datos.php');
-
-?>
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,10 +7,7 @@ include('acceso_datos.php');
     <title>Document</title>
 </head>
 <body>
-    
-<h1>Sesiones</h1>
-
-
-
+    <h1>Bienvenido</h1>
+    <a href="private.php">Privada</a>
 </body>
 </html>

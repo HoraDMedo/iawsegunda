@@ -1,12 +1,14 @@
-<?php
+<?php 
+session_start();
 
-include('acceso_datos.php');
-
+if(
+    !isset($_SESSION['EXAMENIAW']) ||
+    $_SESSION['EXAMENIAW'] == 0
+) {
+    header('Location: login.php');
+    exit;
+}
 ?>
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,10 +18,6 @@ include('acceso_datos.php');
     <title>Document</title>
 </head>
 <body>
-    
-<h1>Sesiones</h1>
-
-
-
+    <h1>Esto es secreto</h1>
 </body>
 </html>

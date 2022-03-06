@@ -7,8 +7,8 @@ include('acceso_datos.php');
 
 //SELECT with WHERE shorter
 
-$select = $conexion_bd->prepare("SELECT * FROM clientes WHERE nombre = :manolo;");
-$row = $select->fetch($select->execute(array(':manolo' => $_GET["id"])));
+$select = $conexion_bd->prepare("SELECT * FROM clientes WHERE nombre = :ddd;");
+$row = $select->fetch($select->execute(array(':ddd' => $_GET["id"])));
 print_r($row);
 
 //print_r($row);

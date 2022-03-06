@@ -25,6 +25,7 @@ $datos = $conexion_bd->query('SELECT * FROM Ciclistas');
                 </tr>
             </thead>
             <tbody>
+                
                 <?php foreach($datos as $fila) { ?>
                 <tr>
                     <td><?=$fila['id']?></td>
@@ -36,6 +37,7 @@ $datos = $conexion_bd->query('SELECT * FROM Ciclistas');
                     <td><?=$fila['num_trofeos']?></td>
                 </tr>
                 <?php } ?>
+
             </tbody>
         </table>
     </div>
