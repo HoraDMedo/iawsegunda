@@ -59,10 +59,7 @@ $datos = $conexion_bd->query('SELECT * FROM Tema ');
                     </a>
                     
                     </td>
-                    
-
-    
-
+         
 
                 </tr>
 

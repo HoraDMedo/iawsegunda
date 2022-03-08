@@ -1,14 +1,13 @@
 <?php 
 session_start();
 
-if(
-    !isset($_SESSION['EXAMENIAW']) ||
-    $_SESSION['EXAMENIAW'] == 0
-) {
+if(!isset($_SESSION['EXAMENIAW2021']) || $_SESSION['EXAMENIAW2021'] == "logout") {
     header('Location: login.php');
     exit;
 }
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,6 +17,7 @@ if(
     <title>Document</title>
 </head>
 <body>
-    <h1>Esto es secreto</h1>
+    <h1>Esto es secreto 2</h1><br>
+    <?php include("menu2.php")?>
 </body>
 </html>

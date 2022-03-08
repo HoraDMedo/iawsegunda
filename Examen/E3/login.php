@@ -2,18 +2,18 @@
 
 session_start();
 
-$secreto = "";
 
-if(isset($_POST["secreto"])) {
-    if($_POST["secreto"] == "aprobado") {
-        $_SESSION["loquequieras"] = 1;
-        header('Location: private.php');
-        exit;
+if(isset($_POST["Enviar"])) { 
+    if($_POST["secreto"] == "samu") {
+         $_SESSION["EXAMENIAW2021"] = "aprobado";
+         header('Location: private.php');
+         exit;
     } else {
-        $_SESSION["loquequieras"] = 0;
+
+        $_SESSION["EXAMENIAW2021"] = "logout";
     }
 } else {
-    $_SESSION["loquequieras"] = 0;
+    $_SESSION["EXAMENIAW2021"] = "logout";
 }
 
 ?>
@@ -29,7 +29,7 @@ if(isset($_POST["secreto"])) {
 <body>
     <form action="login.php" method="post">
         <input type="password" name="secreto" id="">
-        <input type="submit" value="Enviar">
+        <input type="submit" value="Enviar" name="Enviar">
     </form>
 </body>
 </html>

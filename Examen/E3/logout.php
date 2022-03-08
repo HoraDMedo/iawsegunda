@@ -1,8 +1,9 @@
 <?php 
 session_start();
 
-
-if(!isset($_SESSION['EXAMENIAW2021']) || $_SESSION['EXAMENIAW2021'] == "logout") {
+if(isset($_POST["Enviar"])){
+print_r("bacano cabron");
+    $_SESSION['EXAMENIAW2021'] == "logout";
     header('Location: login.php');
     exit;
 }
@@ -10,7 +11,6 @@ if(!isset($_SESSION['EXAMENIAW2021']) || $_SESSION['EXAMENIAW2021'] == "logout")
 
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +20,9 @@ if(!isset($_SESSION['EXAMENIAW2021']) || $_SESSION['EXAMENIAW2021'] == "logout")
     <title>Document</title>
 </head>
 <body>
-    <h1>Esto es secreto 3</h1>
-    <?php include("menu2.php")?>
+    <h1>Desloguearse</h1>
+    <form method="post">
+    <input type="submit" value="Enviar" name="Enviar">
+    </form>
 </body>
 </html>
