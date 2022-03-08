@@ -57,13 +57,13 @@ window.addEventListener("load",function(){
             
           }
 
-          for (let i=0; i < 1; i++){
+          
 
             let br = document.createElement("br")
             br.innerHTML = ""
             salida.appendChild(br)
 
-          }
+          
 
 
 

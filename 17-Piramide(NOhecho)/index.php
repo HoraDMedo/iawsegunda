@@ -1,27 +1,23 @@
 <?php
 
 
-$uno=1;
-$dos = $uno;
-$tres = $uno;
+$var=1;
+$var2=2;
+$var3=3;
+
+$miCadena = (string)$miEntero;
+
 
     for ($i = 1; $i <= 5; $i++) {
-        print($uno);
+        print($var);  
         
-        $uno = $uno + 1;
-        
-        #$uno = $uno + 1;
-        #$dos = $dos + 1;
+        $var = $var + 1;
+        $var2 = $var2 + 1;
 
-        $tres = $uno . $dos;
-
+        $var = $var . $var2;
         echo "<br>";
-
-
-        $uno = $uno . $dos;
-    
         
-      
+        
        
     }
 

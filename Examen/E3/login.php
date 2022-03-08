@@ -4,6 +4,7 @@ session_start();
 
 
 if(isset($_POST["Enviar"])) { 
+    
     if($_POST["secreto"] == "samu") {
          $_SESSION["EXAMENIAW2021"] = "aprobado";
          header('Location: private.php');
