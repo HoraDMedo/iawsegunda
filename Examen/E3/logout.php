@@ -2,8 +2,8 @@
 session_start();
 
 if(isset($_POST["Enviar"])){
-print_r("bacano cabron");
-    $_SESSION['EXAMENIAW2021'] == "logout";
+
+    $_SESSION['EXAMENIAW2021'] = "logout";
     header('Location: login.php');
     exit;
 }

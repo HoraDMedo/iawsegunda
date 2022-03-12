@@ -122,10 +122,10 @@ window.addEventListener("load",function(){
 
     
     reset.addEventListener("click",function(){
-
+      salida.innerHTML= ""
       //var eliminar = document.getElementById("salida")
      // eliminar.parentNode.removeChild(eliminar)
-     location.reload();
+    // location.reload();
 
     })
 

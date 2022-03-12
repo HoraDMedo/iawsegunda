@@ -8,7 +8,7 @@ window.addEventListener("load",function(){
     reset = document.getElementById("reset")
     salida = document.getElementById("salida")
    
-  
+   
 
     //Aosciar la ejecucion de una funcion al evento cli
 
@@ -56,7 +56,7 @@ window.addEventListener("load",function(){
             
     })       
 
-
+        
 
 
 })

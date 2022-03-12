@@ -3,14 +3,16 @@ include('acceso_datos.php');
 
 // ERORO SQLi
 
-$tema = $conexion_bd->query('SELECT id, titulo, nombre, contenido, id_tema FROM Respuesta');
+// $tema = $conexion_bd->query('SELECT id, titulo, nombre, contenido, id_tema FROM Respuesta');
 
 //$datos = $conexion_bd->query('SELECT * FROM Respuesta WHERE id_tema='. $_GET['id']);
 
+$select = $conexion_bd->prepare("SELECT * FROM Respuesta WHERE id_tema = :ddd;");
+$select->execute(array(':ddd' => $_GET["id"]));
+$row = $select->fetchAll(PDO::FETCH_ASSOC);
+
 //SELECT with WHERE shorter
 
-//$select = $conexion_bd->prepare("SELECT * FROM Respuesta WHERE id_tema = :ddd;");
-//$row = $select->fetchAll($select->execute(array(':ddd' => $_GET["id"])));
 
 
 
@@ -42,8 +44,8 @@ print_r($row);
 
 
 
-               <?php foreach($tema as $fila) { ?>  
-                <?php if($fila["id_tema"] == $_GET["id"]) { ?> 
+               <?php foreach($row as $fila) { ?>  
+                <?php// if($fila["id_tema"] == $_GET["id"]) { ?> 
                 <tr>
                 
                     <td><?=$fila["nombre"]?></td>
@@ -51,7 +53,7 @@ print_r($row);
                     <td><?=$fila["contenido"]?></td>
    
                 </tr>
-                <?php } ?>    
+                <?php// } ?>    
              <?php } ?>    
 
                  

@@ -1,5 +1,11 @@
 //alert("Hola mund");
 //document.writeln("Hola soy JS")
+
+//        NUMERO ALEATORIO let aleatorio = parseInt(Math.random()*(8 - 0)+0);
+
+
+
+
 window.addEventListener("load",function(){
 
     uno = document.getElementById("uno")
